@@ -1,0 +1,15 @@
+画像認識困ったことまとめ！！
+まずはopenCVとface-recognition で顔の識別ができると見たのでインストールしようとする！
+pip install openCV 
+pip install face-recognition これができなかった　理由はC++で動くためCmakeと画像を学習するためのC++ Pythonのライブラリの１つdlibが必要とのこと。
+よしインストール！！
+しかし！pip install Cmake はできたが pip install dlibができない！！
+エラーメッセージがCmake必要です! 何でやいれたやろ　1時間調べてバージョンが最新版だとだめらしい 
+dlibのバージョンを19とかにした気がする！
+よっしゃいけたpip install face-recognitionこれもできた　コードを実行！　
+Please install `face_recognition_models` with this command before using `face_recognition`:
+
+pip install git+https://github.com/ageitgey/face_recognition_models
+なに！これをいれるぞ！　pip install git+https://github.com/ageitgey/face_recognition_models
+まだエラー　検索で30分
+pip install setuotoollsがいるなにそれ！！　コードを実行動いた！やった！　//ここがなぜなのかわからない
