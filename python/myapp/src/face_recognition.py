@@ -6,7 +6,7 @@ import requests
 
 
 def send_toserver(name):
-    url = "http://localhost:8080/facerecognition"
+    url = "http://localhost:8080/api/facerecognition"
     data = { "name": name,"names":"dd" }
     try:
         response = requests.post(url, data=data)
@@ -56,9 +56,7 @@ while True:
             if name != "Unknown" and name not in recognized_names:
                 send_toserver(name)
                 recognized_names.add(name)
-
             face_names.append(name)
-
             # もしくは距離が一番近いものを選ぶ
             # face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
             # # : NumPyライブラリの関数で、与えられた配列の中で最小値を持つ要素のインデックスを返す

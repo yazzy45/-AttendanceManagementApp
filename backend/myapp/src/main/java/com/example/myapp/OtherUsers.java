@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class AdministratorUser {
+public class OtherUsers {
 	
 
-	public AdministratorUser(String email, String password) {
+	public OtherUsers(String email, String password) {
 		this.email = email;
 		this.password = password;
 	}

@@ -1,10 +1,9 @@
 import './App.css';
-import CameraButton from './compornent/camerabutton';
-
+import { AppRoutes } from './Routes';
 function App() {
   return (
     <>
-      <CameraButton />
+        <AppRoutes />
     </>
   );
 }
