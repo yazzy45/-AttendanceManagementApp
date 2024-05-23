@@ -33,5 +33,11 @@ public class AdministratorUser {
 	@NotBlank(message = "パスワードが必要です")
 	@Size(min = 2, max = 20, message = "パスワードは2文字以上20文字以下です")
 	private String password;
+	
+	
+	@Override
+    public String toString() {
+        return "OtherUsers{id=" + id +  "', email='" + email  + "'}";
+    }
 
 }

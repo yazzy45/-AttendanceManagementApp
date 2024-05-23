@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,11 @@ public class AuthService {
 	
 	@Autowired
 	private final UserRepository userRepository;
-	public AuthService(UserRepository userRepository) {
+	private final OtherUserRepository otherUserRepository;
+	
+	public AuthService(UserRepository userRepository , OtherUserRepository otherUserRepository) {
 		this.userRepository = userRepository;
+		this.otherUserRepository = otherUserRepository;
 	}
 	
 	public boolean authenticate(String email, String password) {
@@ -22,5 +26,11 @@ public class AuthService {
         }
 		return false;
 	}
+	
+	
+	
+	public List<OtherUsers> findOtherUserAll() {
+                  return otherUserRepository.findAll();
+    }
 
 }

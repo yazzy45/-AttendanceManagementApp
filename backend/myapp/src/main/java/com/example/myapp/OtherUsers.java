@@ -16,15 +16,19 @@ import lombok.NoArgsConstructor;
 public class OtherUsers {
 	
 
-	public OtherUsers(String email, String password) {
+	public OtherUsers ( String username, String email, String password, String role) {
+		
 		this.email = email;
 		this.password = password;
+		this.username = username;
+		this.role = role;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
 	@Column
 	private int id;
+	
 	
 	@NotBlank(message = "メールアドレスが必要です")
 	@Email(message = "メールアドレスの形式が正しくありません")
@@ -33,5 +37,17 @@ public class OtherUsers {
 	@NotBlank(message = "パスワードが必要です")
 	@Size(min = 2, max = 20, message = "パスワードは2文字以上20文字以下です")
 	private String password;
-
+	
+	@NotBlank(message = "ユーザ名が必要です")
+	@Size(min = 2, max = 20, message = "ユーザ名は2文字以上20文字以下です")
+	private String username;
+		
+	@NotBlank(message = "ロールが必要です")
+	@Size(min = 2, max = 20, message = "ロールは2文字以上20文字以下です")
+	private String role;
+	
+	@Override
+    public String toString() {
+        return "OtherUsers";
+    }
 }

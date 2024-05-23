@@ -1,10 +1,7 @@
-import face_recognition
 import cv2
 import numpy as np
 import requests
-
-
-
+import face_recognition 
 def send_toserver(name):
     url = "http://localhost:8080/api/facerecognition"
     data = { "name": name,"names":"dd" }

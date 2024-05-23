@@ -7,6 +7,7 @@ import {
     MDBInput, 
     MDBBtn, 
 } from 'mdb-react-ui-kit'; 
+import '../css/login.css';
 const LoginPage = () => {
     const [email, setemail] = useState("");
     const [password, setPassword] = useState("");
@@ -33,14 +34,14 @@ const LoginPage = () => {
     };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100"> 
-    <div className="border rounded-lg p-4" style={{ width: '500px', height: 'auto' }}> 
-        <MDBContainer className="p-3"> 
-            <h2 className="mb-4 text-center">ログインページ</h2> 
-            <MDBInput wrapperClass='mb-4' placeholder='email' id='email' value={email} type='email' onChange={(e) => setemail(e.target.value)} /> 
-            <MDBInput wrapperClass='mb-4' placeholder='Password' id='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} /> 
-            {error && <p className="text-danger" style={{coler:'red'}}>{error}</p>} 
-            <MDBBtn className="mb-4 d-block btn-primary" style={{ height:'50px',width: '100%' }} onClick={handleLogin}>サインイン</MDBBtn> 
+    <div className="login-container">
+    <div className="login-box">
+        <MDBContainer>
+            <h2 className="mb-4">ログインページ</h2> 
+            <MDBInput className="form-control" placeholder='Email' id='email' value={email} type='email' onChange={(e) => setemail(e.target.value)} /> 
+            <MDBInput className="form-control" placeholder='Password' id='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} /> 
+            {error && <p className="text-danger">{error}</p>} 
+            <MDBBtn className="btn-primary" onClick={handleLogin}>サインイン</MDBBtn> 
         </MDBContainer> 
     </div> 
 </div> 
